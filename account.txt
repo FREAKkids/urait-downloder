@@ -1,0 +1,2 @@
+URAIT_EMAIL=email
+URAIT_PASSWORD=user
