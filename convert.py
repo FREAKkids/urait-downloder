@@ -6,7 +6,7 @@ from PyPDF2 import PdfWriter
 from tqdm import tqdm  
 
 #
-pytesseract.pytesseract.tesseract_cmd = r'C:\Users\dreno\Desktop\UraitDownloader-main\tesseract.exe'  # Измените путь при необходимости
+pytesseract.pytesseract.tesseract_cmd = r'\UraitDownloader-main\tesseract.exe'  # Измените путь при необходимости
 
 def ocr_pdf(input_pdf_path, output_pdf_path, poppler_path=None):
     
@@ -46,6 +46,6 @@ def ocr_pdf(input_pdf_path, output_pdf_path, poppler_path=None):
 if __name__ == "__main__":
     input_pdf = "Основы финансовой грамотности.pdf"  
     output_pdf = "Выход.pdf"  
-    poppler_path = r"C:\Users\dreno\Desktop\UraitDownloader-main\poppler-24.08.0\Library\bin"  # Путь к Poppler
+    poppler_path = r"poppler-24.08.0\Library\bin"  # Путь к Poppler
 
     ocr_pdf(input_pdf, output_pdf, poppler_path)
