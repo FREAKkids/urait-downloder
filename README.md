@@ -31,6 +31,12 @@ pip install PyPDF2 pytesseract pdf2image tqdm win11toast python-environ pypdf sv
 pytesseract.pytesseract.tesseract_cmd = r'*путь до директории*\UraitDownloader-main\tesseract.exe'
 ```
 
+
+Так же необходимо скачать [poppler](https://github.com/oschwartz10612/poppler-windows.git) и так же указать к нему путь (строка 49):
+```
+poppler_path = r"UraitDownloader-main\poppler-24.08.0\Library\bin"  # Путь к Poppler
+```
+
 ## Запуск :
 
 ### 1. Запускаем первый скрипт [main.py](/main.py).
