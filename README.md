@@ -2,6 +2,11 @@
 
 ## Установка и настройка:
 
+### Необходимые библиотеки:
+```
+pip install PyPDF2 pytesseract pdf2image tqdm win11toast python-environ pypdf svglib
+```
+
 ### 1. Скрипт скачивания книг
 Данный скрипт вы можите скачать из [источника](https://github.com/SergeiPopov/UraitDownloader.git), либо же скачав мой полный репозиторий.
 
