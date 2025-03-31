@@ -12,17 +12,13 @@ pip install PyPDF2 pytesseract pdf2image tqdm win11toast python-environ pypdf sv
 
 После копирования репозитория необходимо указать данные от аккауната urait в файле account.txt . (Это нужно для предоставления доступа к книгам).
 
-В процессе запуска скрипта вам необходимо указать ссылку на книгу ( пример : https://urait.ru/author-course/osnovy-finansovoy-gramotnosti-567612). 
-
-ОБЯЗАТЕЛЬНО !!! На книгу, а не на ссылку просмотра.
-
 После чего начнётся скачивание в формате PDF.
 
 ### 2. Далее скачиваем ( если же вы не скачали мой репозиторий) скрипт [convert.py](/convert.py).
 
-## P.s Желательно чтобы файлы всего проекта были в одной папке.
+#### P.s Желательно чтобы файлы всего проекта были в одной папке.
 
-Далее нам необходимо установить и скачать [pytesseract](https://github.com/UB-Mannheim/tesseract/wiki?spm=a2ty_o01.29997173.0.0.2e3ac921xCpn4O) и нужный [языковой фильтр](https://github.com/tesseract-ocr/tessdata.git) в моём случае это русский (rus.traineddata). 
+Далее нам необходимо установить и скачать в директорию проекта [pytesseract](https://github.com/UB-Mannheim/tesseract/wiki?spm=a2ty_o01.29997173.0.0.2e3ac921xCpn4O)  и нужный [языковой фильтр](https://github.com/tesseract-ocr/tessdata.git) в моём случае это русский (rus.traineddata). 
 
 После установки перекидываем языковой фильтр по пути:  "\UraitDownloader-main\tessdata".
 
@@ -32,9 +28,20 @@ pip install PyPDF2 pytesseract pdf2image tqdm win11toast python-environ pypdf sv
 ```
 Поменяв параметр lang='rus' на другой язык.
 
+После необходимо прописать путь к pytesseract ( 9 строка ): 
+```
+pytesseract.pytesseract.tesseract_cmd = r'*путь до директории*\UraitDownloader-main\tesseract.exe'
+```
+
 ## Запуск :
 
-### 1. Запускаем первый скрипт [main.py](/main.py) , и скачиваем книгу ( она скачивается у нас в формате PDF)
+### 1. Запускаем первый скрипт [main.py](/main.py).
+В процессе запуска скрипта вам необходимо указать ссылку на книгу ( пример : https://urait.ru/author-course/osnovy-finansovoy-gramotnosti-567612). 
+
+ОБЯЗАТЕЛЬНО !!! На книгу, а не на ссылку просмотра.
+
+Книга скачается в формате PDF. 
+
 ### 2. Далее переходим в скрипт [convert.py](/convert.py), и в 47 строке вписываем название PDF файла, который у нас скачался:
 
 ```
