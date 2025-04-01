@@ -20,40 +20,36 @@ pip install PyPDF2 pytesseract pdf2image tqdm win11toast python-environ pypdf sv
 
 После установки перекидываем языковой фильтр по пути:  "\UraitDownloader-main\tessdata".
 
-Если же у вас другой языковой фильтр, необходимо изменить его в строке 23:
+Если же у вас другой языковой фильтр, необходимо изменить его :
 ```
- text = pytesseract.image_to_pdf_or_hocr(image, lang='rus', extension='pdf')
+23 text = pytesseract.image_to_pdf_or_hocr(image, lang='rus', extension='pdf')
 ```
 Поменяв параметр lang='rus' на другой язык.
 
-После необходимо прописать путь к pytesseract ( 9 строка ): 
+После необходимо прописать путь к pytesseract : 
 ```
-pytesseract.pytesseract.tesseract_cmd = r'*путь до директории*\UraitDownloader-main\tesseract.exe'
+9 pytesseract.pytesseract.tesseract_cmd = r'*путь до директории*\UraitDownloader-main\tesseract.exe'
 ```
 
 
-Так же необходимо скачать [poppler](https://github.com/oschwartz10612/poppler-windows.git) и так же указать к нему путь (строка 49):
+Так же необходимо скачать [poppler](https://github.com/oschwartz10612/poppler-windows.git) и так же указать к нему путь :
 ```
-poppler_path = r"UraitDownloader-main\poppler-24.08.0\Library\bin"  # Путь к Poppler
+49 poppler_path = r"UraitDownloader-main\poppler-24.08.0\Library\bin"  # Путь к Poppler
 ```
 
 ## Запуск :
 
 ### 1. Запускаем первый скрипт [main.py](/main.py).
-В процессе запуска скрипта вам необходимо указать ссылку на книгу ( пример : https://urait.ru/author-course/osnovy-finansovoy-gramotnosti-567612). 
+В процессе запуска скрипта вам необходимо указать ссылку на книгу ( пример ссылки : https://urait.ru/author-course/osnovy-finansovoy-gramotnosti-567612). 
 
 ОБЯЗАТЕЛЬНО !!! На книгу, а не на ссылку просмотра.
 
-Книга скачается в формате PDF. 
-
-### 2. Далее переходим в скрипт [convert.py](/convert.py), и в 47 строке вписываем название PDF файла, который у нас скачался:
+### 2. Далее переходим в скрипт [convert.py](/convert.py), и вписываем название PDF файла, который у нас скачался:
 
 ```
-input_pdf = "Основы финансовой грамотности.pdf"  
+47 input_pdf = "Основы финансовой грамотности.pdf"  
 ```
 
-Если вы всё сделали правильно, и на первичном уровне у вас не выдало ошибок, то необходимо подождать пару минут ( т.к pytesseract загружается на быстро). А после наблюдаем за ходом выполнения программы в консоле. В результате у вас появится файлик "Выход.pdf" ( данное название можно поменять заранее, в коде, в строке 48) :
-```
-output_pdf = "Выход.pdf"  
-```
-В данном файле уже можно спокойно копировать текст из книг
+Если вы всё сделали правильно, и на первичном уровне у вас не выдало ошибок, то необходимо подождать пару минут ( т.к pytesseract загружается на быстро). А после наблюдаем за шкалой выполнения программы в консоле. В результате у вас появится файлик "Выход.pdf".
+
+В полученном файле уже можно спокойно копировать текст из книг
